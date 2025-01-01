@@ -1,54 +1,82 @@
 local Roact = require(script.Parent.Roact)
-local Id = "rbxasset://fonts/families/RobotoMono.json"
 
 return {
-	["dialogue_1"] = function()
+	["dialog_1"] = function(str: string)
+		local FontId = "rbxasset://fonts/families/"..str..".json"
 		local Interface = Roact.createElement("ScreenGui", {
 			IgnoreGuiInset = true;
-			Name = "ProDialogue";
+			Name = "DialogTableau";
 		},{
 			Main = Roact.createElement("Frame", {
-				BackgroundColor3 = Color3.fromRGB(0, 0, 0);
-				BackgroundTransparency = 0.3;
-				Position = UDim2.new(0.229, 0, 0.672, 0);
-				Size = UDim2.new(0, 738, 0, 188);
+				AnchorPoint = Vector2.new(0.5, 0.5);
+				BackgroundTransparency = 0.5;
+				BorderSizePixel = 0;
+				Position = UDim2.new(0.5, 0, 0.85, 0);
+				Size = UDim2.new(0.4, 0, 0.25, 0);
 			}, {
-				UICorner = Roact.createElement("UICorner", {
-					CornerRadius = UDim.new(0, 12)
+				UIGradient = Roact.createElement("UIGradient", {
+					Color = ColorSequence.new(Color3.fromRGB(0, 0, 0), Color3.fromRGB(117, 117, 117));
+					Rotation = 90;
 				});
 				UIStroke = Roact.createElement("UIStroke", {
 					ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-					Color = Color3.fromRGB(162, 162, 162);
-					Thickness = 2
+					Color = Color3.fromRGB(255, 255, 255);
+					Thickness = 1.5;
+					Transparency = 0.5;
 				});
 				Title = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 196, 0, 36);
-					Position = UDim2.new(0.043, 0, 0.059, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(255, 255, 255),
-					Text = "",
-					TextSize = 25,
-					TextXAlignment = Enum.TextXAlignment.Left,
-					FontFace = Font.new(Id, Enum.FontWeight.Regular)
+					AnchorPoint = Vector2.new(0, 0.5);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0, 0, -0.18, 0);
+					Size = UDim2.new(0.3, 0, 0.25, 0);
+					TextColor3 = Color3.fromRGB(255, 255, 255);
+					Text = "";
+					TextSize = 25;
+					FontFace = Font.new(FontId, Enum.FontWeight.Regular);
+				}, {
+					UIStroke = Roact.createElement("UIStroke", {
+						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
+					});
 				});
-				Description = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 675, 0, 109);
-					Position = UDim2.new(0.043, 0, 0.287, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(150, 150, 150),
-					Text = "",
-					TextSize = 25,
-					TextWrapped = true,
-					FontFace = Font.new(Id, Enum.FontWeight.ExtraLight)
+				Dialog = Roact.createElement("Frame", {
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundTransparency = 1;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0.5, 0, 0.5, 0);
+					Size = UDim2.new(0.9, 0, 0.8, 0);
+					ClipsDescendants = true;
+				}, {
+					UIListLayout = Roact.createElement("UIListLayout", {
+						Padding = UDim.new(0, 0);
+						FillDirection = Enum.FillDirection.Horizontal;
+						Wraps = true;
+					})
 				});
 				skip = Roact.createElement("TextButton", {
-					Size = UDim2.new(0, 76, 0, 19);
-					Position = UDim2.new(0.885, 0, 0.867, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(255, 255, 255),
-					TextSize = 14,
-					Text = "skip >",
-					FontFace = Font.new(Id, Enum.FontWeight.Bold)
+					AnchorPoint = Vector2.new(0, 0);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(1.01, 0, 0.8, 0);
+					Size = UDim2.new(0.06, 0, 0.2, 0);
+					TextColor3 = Color3.fromRGB(255, 255, 255);
+					TextSize = 16;
+					Text = ">>";
+					Visible = false;
+					TextWrapped = true;
+					FontFace = Font.new(FontId, Enum.FontWeight.Bold);
+				}, {
+					UIStroke = Roact.createElement("UIStroke", {
+						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
+					});
 				})
 			})
 		})
@@ -56,175 +84,91 @@ return {
 		return Interface
 	end;
 	
-	["dialogue_1_icon"] = function()
+	["dialog_2"] = function(str: string)
+		local FontId = "rbxasset://fonts/families/"..str..".json"
 		local Interface = Roact.createElement("ScreenGui", {
 			IgnoreGuiInset = true;
-			Name = "ProDialogue";
+			Name = "DialogTableau";
 		},{
 			Main = Roact.createElement("Frame", {
-				BackgroundColor3 = Color3.fromRGB(0, 0, 0);
-				BackgroundTransparency = 0.3;
-				Position = UDim2.new(0.229, 0, 0.672, 0);
-				Size = UDim2.new(0, 738, 0, 188);
+				AnchorPoint = Vector2.new(0.5, 0.5);
+				BackgroundTransparency = 0.5;
+				BorderSizePixel = 0;
+				Position = UDim2.new(0.5, 0, 0.85, 0);
+				Size = UDim2.new(0.4, 0, 0.25, 0);
 			}, {
-				UICorner = Roact.createElement("UICorner", {
-					CornerRadius = UDim.new(0, 12)
+				UIGradient = Roact.createElement("UIGradient", {
+					Color = ColorSequence.new(Color3.fromRGB(0, 0, 0), Color3.fromRGB(117, 117, 117));
+					Rotation = 90;
 				});
 				UIStroke = Roact.createElement("UIStroke", {
 					ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-					Color = Color3.fromRGB(162, 162, 162);
-					Thickness = 2
+					Color = Color3.fromRGB(255, 255, 255);
+					Thickness = 1.5;
+					Transparency = 0.5;
 				});
 				Title = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 183, 0, 36);
-					Position = UDim2.new(0.031, 0, 0.064, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(255, 255, 255),
-					Text = "",
-					TextSize = 25,
-					TextXAlignment = Enum.TextXAlignment.Left,
-					FontFace = Font.new(Id, Enum.FontWeight.Regular)
-				});
-				Description = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 54, 0, 109);
-					Position = UDim2.new(0.225, 0, 0.287, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(150, 150, 150),
-					Text = "",
-					TextSize = 25,
-					TextWrapped = true,
-					FontFace = Font.new(Id, Enum.FontWeight.ExtraLight)
-				});
-				skip = Roact.createElement("TextButton", {
-					Size = UDim2.new(0, 76, 0, 19);
-					Position = UDim2.new(0.885, 0, 0.867, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(255, 255, 255),
-					TextSize = 14,
-					Text = "skip >",
-					Visible = false,
-					FontFace = Font.new(Id, Enum.FontWeight.Bold)
-				});
-				Icon = Roact.createElement("ImageLabel", {
-					Size = UDim2.new(0, 100, 0, 100);
-					Position = UDim2.new(0.053, 0, 0.309, 0);
-					BackgroundTransparency = 1,
-					Image = "";
+					AnchorPoint = Vector2.new(0, 0.5);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0, 0, -0.18, 0);
+					Size = UDim2.new(0.3, 0, 0.25, 0);
+					TextColor3 = Color3.fromRGB(255, 255, 255);
+					Text = "";
+					TextSize = 25;
+					FontFace = Font.new(FontId, Enum.FontWeight.Regular);
 				}, {
-					UICorner = Roact.createElement("UICorner", {
-						CornerRadius = UDim.new(0, 12)
-					});
 					UIStroke = Roact.createElement("UIStroke", {
 						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-						Color = Color3.fromRGB(88, 88, 88);
-						Thickness = 2
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
 					});
 				});
-			})
-		})
-		
-		return Interface
-	end;
-	
-	["dialogue_2"] = function()
-		local Interface = Roact.createElement("ScreenGui", {
-			IgnoreGuiInset = true;
-			Name = "ProDialogue";
-		},{
-			Main = Roact.createElement("Frame", {
-				BackgroundColor3 = Color3.fromRGB(0, 0, 0);
-				BackgroundTransparency = 0.3;
-				Position = UDim2.new(0.229, 0, 0.672, 0);
-				Size = UDim2.new(0, 514, 0, 188);
-			}, {
-				UICorner = Roact.createElement("UICorner", {
-					CornerRadius = UDim.new(0, 12)
-				});
-				UIStroke = Roact.createElement("UIStroke", {
-					ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-					Color = Color3.fromRGB(162, 162, 162);
-					Thickness = 2
-				});
-				Title = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 196, 0, 36);
-					Position = UDim2.new(0.043, 0, 0.059, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(255, 255, 255),
-					Text = "",
-					TextSize = 25,
-					TextXAlignment = Enum.TextXAlignment.Left,
-					FontFace = Font.new(Id, Enum.FontWeight.Regular)
-				});
-				Description = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 469, 0, 109);
-					Position = UDim2.new(0.043, 0, 0.287, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(150, 150, 150),
-					Text = "",
-					TextSize = 25,
-					TextWrapped = true,
-					FontFace = Font.new(Id, Enum.FontWeight.ExtraLight)
+				Dialog = Roact.createElement("Frame", {
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundTransparency = 1;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0.5, 0, 0.5, 0);
+					Size = UDim2.new(0.9, 0, 0.8, 0);
+					ClipsDescendants = true;
+				}, {
+					UIListLayout = Roact.createElement("UIListLayout", {
+						Padding = UDim.new(0, 0);
+						FillDirection = Enum.FillDirection.Horizontal;
+						Wraps = true;
+					})
 				});
 				Options = Roact.createElement("Frame", {
-					Size = UDim2.new(0, 215, 0, 188);
-					Position = UDim2.new(1.016, 0, 0, 0);
-					BackgroundTransparency = 0.3,
-					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundTransparency = 1;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0.5, 0, 1.16);
+					Size = UDim2.new(1, 0, 0.2, 0);
 				}, {
-					UICorner = Roact.createElement("UICorner", {
-						CornerRadius = UDim.new(0, 12)
+					UIListLayout = Roact.createElement("UIListLayout", {
+						Padding = UDim.new(0.01, 0);
+						FillDirection = Enum.FillDirection.Horizontal;
+						HorizontalAlignment = Enum.HorizontalAlignment.Center;
 					});
-					UIStroke = Roact.createElement("UIStroke", {
-						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-						Color = Color3.fromRGB(162, 162, 162);
-						Thickness = 2
-					});
-					Opt1 = Roact.createElement("TextButton", {
-						Size = UDim2.new(0, 188, 0, 40);
-						Position = UDim2.new(0.06, 0, 0.128, 0);
-						BackgroundTransparency = 0.5,
-						BackgroundColor3 = Color3.fromRGB(29, 29, 29);
-						TextColor3 = Color3.fromRGB(255, 255, 255),
-						TextSize = 17,
-						Text = "Answer 1",
-						TextWrapped = true,
-						Visible = false,
-						FontFace = Font.new(Id, Enum.FontWeight.Bold)
+					Template = Roact.createElement("TextButton", {
+						AutomaticSize = Enum.AutomaticSize.XY;
+						BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+						BackgroundTransparency = 0.5;
+						BorderSizePixel = 0;
+						Size = UDim2.new(0.3, 0, 1, 0);
+						TextColor3 = Color3.fromRGB(255, 255, 255);
+						Visible = false;
+						TextWrapped = true;
+						TextSize = 25;
+						FontFace = Font.new(FontId, Enum.FontWeight.Regular);
 					}, {
-						UICorner = Roact.createElement("UICorner", {
-							CornerRadius = UDim.new(0, 12)
-						});
-					});
-					Opt2 = Roact.createElement("TextButton", {
-						Size = UDim2.new(0, 188, 0, 40);
-						Position = UDim2.new(0.06, 0, 0.394, 0);
-						BackgroundTransparency = 0.5,
-						BackgroundColor3 = Color3.fromRGB(29, 29, 29);
-						TextColor3 = Color3.fromRGB(255, 255, 255),
-						TextSize = 17,
-						Text = "Answer 2",
-						TextWrapped = true,
-						Visible = false,
-						FontFace = Font.new(Id, Enum.FontWeight.Bold)
-					}, {
-						UICorner = Roact.createElement("UICorner", {
-							CornerRadius = UDim.new(0, 12)
-						});
-					});
-					Opt3 = Roact.createElement("TextButton", {
-						Size = UDim2.new(0, 188, 0, 40);
-						Position = UDim2.new(0.06, 0, 0.654, 0);
-						BackgroundTransparency = 0.5,
-						BackgroundColor3 = Color3.fromRGB(29, 29, 29);
-						TextColor3 = Color3.fromRGB(255, 255, 255),
-						TextSize = 17,
-						Text = "Answer 3",
-						TextWrapped = true,
-						Visible = false,
-						FontFace = Font.new(Id, Enum.FontWeight.Bold)
-					}, {
-						UICorner = Roact.createElement("UICorner", {
-							CornerRadius = UDim.new(0, 12)
+						UIStroke = Roact.createElement("UIStroke", {
+							ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+							Color = Color3.fromRGB(255, 255, 255);
+							Thickness = 1.5;
+							Transparency = 0.5;
 						});
 					})
 				})
@@ -234,120 +178,206 @@ return {
 		return Interface
 	end;
 	
-	["dialogue_2_icon"] = function()
+	["dialog_1_headshot"] = function(str: string, img: number)
+		local FontId = "rbxasset://fonts/families/"..str..".json"
 		local Interface = Roact.createElement("ScreenGui", {
 			IgnoreGuiInset = true;
-			Name = "ProDialogue";
+			Name = "DialogTableau";
 		},{
 			Main = Roact.createElement("Frame", {
-				BackgroundColor3 = Color3.fromRGB(0, 0, 0);
-				BackgroundTransparency = 0.3;
-				Position = UDim2.new(0.229, 0, 0.672, 0);
-				Size = UDim2.new(0, 514, 0, 188);
+				AnchorPoint = Vector2.new(0, 0.5);
+				BackgroundTransparency = 0.5;
+				BorderSizePixel = 0;
+				Position = UDim2.new(0.43, 0, 0.85, 0);
+				Size = UDim2.new(0.27, 0, 0.25, 0);
 			}, {
-				UICorner = Roact.createElement("UICorner", {
-					CornerRadius = UDim.new(0, 12)
+				UIGradient = Roact.createElement("UIGradient", {
+					Color = ColorSequence.new(Color3.fromRGB(0, 0, 0), Color3.fromRGB(117, 117, 117));
+					Rotation = 90;
 				});
 				UIStroke = Roact.createElement("UIStroke", {
 					ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-					Color = Color3.fromRGB(162, 162, 162);
-					Thickness = 2
+					Color = Color3.fromRGB(255, 255, 255);
+					Thickness = 1.5;
+					Transparency = 0.5;
 				});
 				Title = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 196, 0, 36);
-					Position = UDim2.new(0.043, 0, 0.059, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(255, 255, 255),
-					Text = "",
-					TextSize = 25,
-					TextXAlignment = Enum.TextXAlignment.Left,
-					FontFace = Font.new(Id, Enum.FontWeight.Regular)
-				});
-				Description = Roact.createElement("TextLabel", {
-					Size = UDim2.new(0, 346, 0, 109);
-					Position = UDim2.new(0.283, 0, 0.287, 0);
-					BackgroundTransparency = 1,
-					TextColor3 = Color3.fromRGB(150, 150, 150),
-					Text = "",
-					TextSize = 25,
-					TextWrapped = true,
-					FontFace = Font.new(Id, Enum.FontWeight.ExtraLight)
-				});
-				Icon = Roact.createElement("ImageLabel", {
-					Size = UDim2.new(0, 100, 0, 100);
-					Position = UDim2.new(0.053, 0, 0.309, 0);
-					BackgroundTransparency = 1,
-					Image = "";
+					AnchorPoint = Vector2.new(0, 0.5);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(-0.48, 0, -0.18, 0);
+					Size = UDim2.new(0.45, 0, 0.25, 0);
+					TextColor3 = Color3.fromRGB(255, 255, 255);
+					Text = "";
+					TextSize = 25;
+					FontFace = Font.new(FontId, Enum.FontWeight.Regular);
 				}, {
-					UICorner = Roact.createElement("UICorner", {
-						CornerRadius = UDim.new(0, 12)
-					});
 					UIStroke = Roact.createElement("UIStroke", {
 						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-						Color = Color3.fromRGB(88, 88, 88);
-						Thickness = 2
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
+					});
+				});
+				Dialog = Roact.createElement("Frame", {
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundTransparency = 1;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0.5, 0, 0.5, 0);
+					Size = UDim2.new(0.9, 0, 0.8, 0);
+					ClipsDescendants = true;
+				}, {
+					UIListLayout = Roact.createElement("UIListLayout", {
+						Padding = UDim.new(0, 0);
+						FillDirection = Enum.FillDirection.Horizontal;
+						Wraps = true;
+					})
+				});
+				skip = Roact.createElement("TextButton", {
+					AnchorPoint = Vector2.new(0, 0);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(1.01, 0, 0.8, 0);
+					Size = UDim2.new(0.06, 0, 0.2, 0);
+					TextColor3 = Color3.fromRGB(255, 255, 255);
+					TextSize = 16;
+					Text = ">>";
+					Visible = false;
+					TextWrapped = true;
+					FontFace = Font.new(FontId, Enum.FontWeight.Bold);
+				}, {
+					UIStroke = Roact.createElement("UIStroke", {
+						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
+					});
+				});
+				imgShot = Roact.createElement("ImageLabel", {
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(-0.25, 0, 0.5, 0);
+					Size = UDim2.new(0.45, 0, 1, 0);
+					Image = "rbxassetid://"..img
+				}, {
+					UIStroke = Roact.createElement("UIStroke", {
+						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
+					});
+				});
+			})
+		})
+		
+		return Interface
+	end;
+	
+	["dialog_2_headshot"] = function(str: string, img: number)
+		local FontId = "rbxasset://fonts/families/"..str..".json"
+		local Interface = Roact.createElement("ScreenGui", {
+			IgnoreGuiInset = true;
+			Name = "DialogTableau";
+		},{
+			Main = Roact.createElement("Frame", {
+				AnchorPoint = Vector2.new(0, 0.5);
+				BackgroundTransparency = 0.5;
+				BorderSizePixel = 0;
+				Position = UDim2.new(0.43, 0, 0.85, 0);
+				Size = UDim2.new(0.27, 0, 0.25, 0);
+			}, {
+				UIGradient = Roact.createElement("UIGradient", {
+					Color = ColorSequence.new(Color3.fromRGB(0, 0, 0), Color3.fromRGB(117, 117, 117));
+					Rotation = 90;
+				});
+				UIStroke = Roact.createElement("UIStroke", {
+					ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+					Color = Color3.fromRGB(255, 255, 255);
+					Thickness = 1.5;
+					Transparency = 0.5;
+				});
+				Title = Roact.createElement("TextLabel", {
+					AnchorPoint = Vector2.new(0, 0.5);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(-0.48, 0, -0.18, 0);
+					Size = UDim2.new(0.45, 0, 0.25, 0);
+					TextColor3 = Color3.fromRGB(255, 255, 255);
+					Text = "";
+					TextSize = 25;
+					FontFace = Font.new(FontId, Enum.FontWeight.Regular);
+				}, {
+					UIStroke = Roact.createElement("UIStroke", {
+						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
+					});
+				});
+				Dialog = Roact.createElement("Frame", {
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundTransparency = 1;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0.5, 0, 0.5, 0);
+					Size = UDim2.new(0.9, 0, 0.8, 0);
+					ClipsDescendants = true;
+				}, {
+					UIListLayout = Roact.createElement("UIListLayout", {
+						Padding = UDim.new(0, 0);
+						FillDirection = Enum.FillDirection.Horizontal;
+						Wraps = true;
+					})
+				});
+				imgShot = Roact.createElement("ImageLabel", {
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+					BackgroundTransparency = 0.5;
+					BorderSizePixel = 0;
+					Position = UDim2.new(-0.25, 0, 0.5, 0);
+					Size = UDim2.new(0.45, 0, 1, 0);
+					Image = "rbxassetid://"..img
+				}, {
+					UIStroke = Roact.createElement("UIStroke", {
+						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+						Color = Color3.fromRGB(255, 255, 255);
+						Thickness = 1.5;
+						Transparency = 0.5;
 					});
 				});
 				Options = Roact.createElement("Frame", {
-					Size = UDim2.new(0, 215, 0, 188);
-					Position = UDim2.new(1.016, 0, 0, 0);
-					BackgroundTransparency = 0.3,
-					BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+					AnchorPoint = Vector2.new(0.5, 0.5);
+					BackgroundTransparency = 1;
+					BorderSizePixel = 0;
+					Position = UDim2.new(0.25, 0, 1.16);
+					Size = UDim2.new(1, 0, 0.2, 0);
 				}, {
-					UICorner = Roact.createElement("UICorner", {
-						CornerRadius = UDim.new(0, 12)
+					UIListLayout = Roact.createElement("UIListLayout", {
+						Padding = UDim.new(0.01, 0);
+						FillDirection = Enum.FillDirection.Horizontal;
+						HorizontalAlignment = Enum.HorizontalAlignment.Center;
 					});
-					UIStroke = Roact.createElement("UIStroke", {
-						ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
-						Color = Color3.fromRGB(162, 162, 162);
-						Thickness = 2
-					});
-					Opt1 = Roact.createElement("TextButton", {
-						Size = UDim2.new(0, 188, 0, 40);
-						Position = UDim2.new(0.06, 0, 0.128, 0);
-						BackgroundTransparency = 0.5,
-						BackgroundColor3 = Color3.fromRGB(29, 29, 29);
-						TextColor3 = Color3.fromRGB(255, 255, 255),
-						TextSize = 17,
-						Text = "Answer 1",
-						TextWrapped = true,
-						Visible = false,
-						FontFace = Font.new(Id, Enum.FontWeight.Bold)
+					Template = Roact.createElement("TextButton", {
+						AutomaticSize = Enum.AutomaticSize.XY;
+						BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+						BackgroundTransparency = 0.5;
+						BorderSizePixel = 0;
+						Size = UDim2.new(0.3, 0, 1, 0);
+						TextColor3 = Color3.fromRGB(255, 255, 255);
+						Visible = false;
+						TextWrapped = true;
+						TextSize = 25;
+						FontFace = Font.new(FontId, Enum.FontWeight.Regular);
 					}, {
-						UICorner = Roact.createElement("UICorner", {
-							CornerRadius = UDim.new(0, 12)
-						});
-					});
-					Opt2 = Roact.createElement("TextButton", {
-						Size = UDim2.new(0, 188, 0, 40);
-						Position = UDim2.new(0.06, 0, 0.394, 0);
-						BackgroundTransparency = 0.5,
-						BackgroundColor3 = Color3.fromRGB(29, 29, 29);
-						TextColor3 = Color3.fromRGB(255, 255, 255),
-						TextSize = 17,
-						Text = "Answer 2",
-						TextWrapped = true,
-						Visible = false,
-						FontFace = Font.new(Id, Enum.FontWeight.Bold)
-					}, {
-						UICorner = Roact.createElement("UICorner", {
-							CornerRadius = UDim.new(0, 12)
-						});
-					});
-					Opt3 = Roact.createElement("TextButton", {
-						Size = UDim2.new(0, 188, 0, 40);
-						Position = UDim2.new(0.06, 0, 0.654, 0);
-						BackgroundTransparency = 0.5,
-						BackgroundColor3 = Color3.fromRGB(29, 29, 29);
-						TextColor3 = Color3.fromRGB(255, 255, 255),
-						TextSize = 17,
-						Text = "Answer 3",
-						TextWrapped = true,
-						Visible = false,
-						FontFace = Font.new(Id, Enum.FontWeight.Bold)
-					}, {
-						UICorner = Roact.createElement("UICorner", {
-							CornerRadius = UDim.new(0, 12)
+						UIStroke = Roact.createElement("UIStroke", {
+							ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+							Color = Color3.fromRGB(255, 255, 255);
+							Thickness = 1.5;
+							Transparency = 0.5;
 						});
 					})
 				})
